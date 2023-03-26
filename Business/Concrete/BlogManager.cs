@@ -10,16 +10,6 @@ namespace Business.Concrete
 {
     public class BlogManager : IBlogService
     {
-        public void Add(Blog t)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(Blog t)
-        {
-            throw new NotImplementedException();
-        }
-
         public Blog GetById(int id)
         {
             throw new NotImplementedException();
@@ -30,7 +20,17 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
-        public void Update(Blog t)
+        public void TAdd(Blog entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TDelete(Blog entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TUpdate(Blog entity)
         {
             throw new NotImplementedException();
         }
