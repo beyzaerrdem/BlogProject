@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using DataAccess.Abstract;
 using Entity.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace Business.Concrete
 {
     public class BlogManager : IBlogService
     {
+        IBlogDal _blogDal;
+
+        public BlogManager(IBlogDal blogDal)
+        {
+            _blogDal = blogDal;
+        }
+
         public Blog GetById(int id)
         {
-            throw new NotImplementedException();
+            return _blogDal.GetById(id);
         }
 
         public List<Blog> GetList()
         {
-            throw new NotImplementedException();
+            return _blogDal.GetAllList();
         }
 
-        public void TAdd(Blog entity)
+        public void TAdd(Blog blog)
         {
-            throw new NotImplementedException();
+            _blogDal.Add(blog);
         }
 
-        public void TDelete(Blog entity)
+        public void TDelete(Blog blog)
         {
-            throw new NotImplementedException();
+            _blogDal.Delete(blog);
         }
 
-        public void TUpdate(Blog entity)
+        public void TUpdate(Blog blog)
         {
-            throw new NotImplementedException();
+            _blogDal.Update(blog);
         }
     }
 }
